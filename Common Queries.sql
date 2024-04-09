@@ -274,3 +274,8 @@ delete from account_details where id = 1;
 -- VIEWS ---
 create view accounts_view as select name from account_details;
 select * from accounts_view;
+
+update account_details set name = "Kashish" where name = "sanchit";
+select * from account_details;
+select * from accounts_view; 
+-- view is not a snapshot , its only a layer of abstraction over a full table -- 
