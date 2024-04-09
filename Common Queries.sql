@@ -279,3 +279,6 @@ update account_details set name = "Kashish" where name = "sanchit";
 select * from account_details;
 select * from accounts_view; 
 -- view is not a snapshot , its only a layer of abstraction over a full table -- 
+-- view can also be altered to redefine its structure ---
+alter view accounts_view as select name , id from account_details;
+select * from accounts_view;
