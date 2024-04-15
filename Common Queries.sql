@@ -227,6 +227,12 @@ WHERE t2.name IS NULL (MINUS)
      
       -- Q45.) Total salaries paid in each dept
       select sum(salary) , department from worker group by department;
+
+--Q46.) Do an update of male to female and female to male of gender column in 1 statement
+	update table_name set gender = case when 'male' then 'female'
+		when 'female' then 'male'
+		else gender 
+		end;
       
 -- ALTER COMMANDS
 -- add , modify , change column , add column , rename.
@@ -282,3 +288,5 @@ select * from accounts_view;
 -- view can also be altered to redefine its structure ---
 alter view accounts_view as select name , id from account_details;
 select * from accounts_view;
+
+
