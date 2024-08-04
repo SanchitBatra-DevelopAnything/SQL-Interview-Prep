@@ -289,4 +289,13 @@ select * from accounts_view;
 alter view accounts_view as select name , id from account_details;
 select * from accounts_view;
 
+-- You have a customers and orders table , you need to find customers who did not place any order (easily hojayga from left join)
+-- What if you need to print total amount spent by each customer in left join and how to handle nulls?
+--ifnull(expression , replacement if expression was null)
+
+select first_name , last_name , email , ifnull(sum(order_amount) , 0) as money_spent
+from customers left join orders on customers.customer_id = orders.customer_id
+group by customers.customer_id
+order by money_spent;
+
 
