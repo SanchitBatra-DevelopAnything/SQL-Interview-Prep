@@ -298,4 +298,17 @@ from customers left join orders on customers.customer_id = orders.customer_id
 group by customers.customer_id
 order by money_spent;
 
+--Example of if else in SQL
+
+select first_name , ifnull(avg(grade) , 0) as average , case
+when 
+ifnull(avg(grade) , 0)>=75 
+then 'PASSING' 
+ELSE 'FAILING' 
+END 
+as passing_status from students left join papers
+on students.id=papers.student_id
+group by students.id
+order by average desc;
+
 
